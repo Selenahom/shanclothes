@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="book">
+        <h1>Sign Up</h1>
+        <div class="pen">
+            <div class="table">
+                <p>Email or Phone</p>
+                <input class="email" type="email" placeholder="Email or Phone">
+            </div>
+            <div class="table2">
+                <p>Password <i class="fa-solid fa-key"></i></p>
+                <input class="pass1" type="password" name="" id="" placeholder="Password">
+                <input class="pass2" type="password" name="" id="" placeholder="Comfirm Password">
+            </div>
+            <div class="table3">
+                <input type="checkbox">
+                <p>Remember me</p>
+            </div>
+            <button class="signup">Sign Up</button>
+            <div class="signupwith">
+                <p class="ruler">Already have account?</p>
+                <div class="table5">
+                    <a class="logi" href="login.html">Login account</i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+        let email = document.querySelector('.email');
+        let pass1 = document.querySelector('.pass1');
+        let pass2 = document.querySelector('.pass2');
+        let signup = document.querySelector('.signup');
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBFDv1bhE6B_MZlHdd_3tFdGvibxioDzOg",
+            authDomain: "shanclothes-1618f.firebaseapp.com",
+            projectId: "shanclothes-1618f",
+            storageBucket: "shanclothes-1618f.firebasestorage.app",
+            messagingSenderId: "730846359047",
+            appId: "1:730846359047:web:a68939a83a7f07dd0b84a2",
+            measurementId: "G-S0CP5CMJCS"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                window.location.href = '../../../';
+            } else {
+                
+            }
+        });
+
+        signup.addEventListener('click', () => {
+            if (email.value.length > 10) {
+                if (pass1.value.length > 7 && pass2.value.length > 7) {
+                    if (pass1.value == pass2.value) {
+                        createUserWithEmailAndPassword(auth, email.value, pass1.value).then((user) => {
+                            alert('Account was created successfully.')
+                        })
+                            .catch((error) => {
+                                alert(error.code)
+                            })
+                    } else {
+                        alert("Password doesn't match!")
+                    }
+                } else {
+                    alert('Password must have at least 8 or above!')
+                }
+            } else {
+                alert('Please enter email!')
+            }
+        })
+    </script>
+</body>
+
+</html>

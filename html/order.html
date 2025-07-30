@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="../css/order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <button class="back" onclick="window.history.back()">
+        <i class="fa-solid fa-arrow-left"></i>
+        back
+    </button>
+    <div class="cover">
+        <div class="left">
+            <div class="big">
+                <img src="" alt="">
+            </div>
+            <div class="bar">
+                <div class="small"><img src="" alt=""></div>
+                <div class="small2"><img src="" alt=""></div>
+                <div class="small3"><img src="" alt=""></div>
+            </div>
+        </div>
+        <div class="right">
+            <h1>Tai Dress</h1>
+            <h2>K 70000</h2>
+            <div id="horizontal-line"></div>
+            <div class="option">
+                <div class="size">
+                    <p>Availiable Size</p>
+                    <div class="button">
+                    </div>
+                </div>
+                <div class="color">
+                    <p>Availiable Color</p>
+                    <div class="rainbow">
+                    </div>
+
+                </div>
+            </div>
+            <div id="horizontal-line"></div>
+            <div class="low">
+                <button class="share" onclick="shar()">
+                    <i class="fa-solid fa-share"></i>
+                </button>
+                <div class="buy">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <a href="https://forms.gle/5korTm4v9hoDTpuTA">Order now</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+     <div class="loading">
+        <p>Loading...</p>
+    </div>
+    <script>
+        let url = new URL(window.location.href);
+        let id = url.searchParams.get('id');
+        let cate = url.searchParams.get('cate');
+        let saiimg = document.querySelector('.big img');
+        let name = document.querySelector('.right h1');
+        let sizes = document.querySelector('.button');
+        let price = document.querySelector('.right h2');
+        let colors = document.querySelector('.rainbow');
+        let link = '';
+        let img1 = document.querySelector('.small img');
+        let img2 = document.querySelector('.small2 img');
+        let img3 = document.querySelector('.small3 img');
+        let loading = document.querySelector('.loading');
+
+        if (cate == 'trending') {
+            link = 'https://raw.githubusercontent.com/Selenahom/api/refs/heads/main/trending';
+        }else if (cate == 'female') {
+            link = 'https://raw.githubusercontent.com/Selenahom/api/refs/heads/main/female';
+        }else if (cate == 'top') {
+            link = 'https://raw.githubusercontent.com/Selenahom/api/refs/heads/main/Tops';
+        }else if (cate == 'accessories') {
+            link = 'https://raw.githubusercontent.com/Selenahom/api/refs/heads/main/accessories';
+        }else if (cate == 'dresses') {
+            link = 'https://raw.githubusercontent.com/Selenahom/api/refs/heads/main/dresses';
+        }else if (cate == 'wedding') {
+            link = 'https://raw.githubusercontent.com/Selenahom/api/refs/heads/main/wedding';
+        }else if (cate == 'male') {
+            link = 'https://raw.githubusercontent.com/Selenahom/api/refs/heads/main/male';
+        }else if (cate == 'kids') {
+            link = 'https://raw.githubusercontent.com/Selenahom/api/refs/heads/main/child';
+        }else if (cate == 'bags') {
+            link = 'https://raw.githubusercontent.com/Selenahom/api/refs/heads/main/bags';
+        }else if (cate == 'couples') {
+            link = 'https://raw.githubusercontent.com/Selenahom/api/refs/heads/main/couple';
+        }
+
+
+        function shar(){
+            navigator.share({
+                title:'Shan clothes',
+                url:window.location.href
+            })
+        }
+
+        fetch(link).then(r => r.json()).then(all => {
+            saiimg.src = all[id].img;
+            name.innerText = all[id].name;
+            price.innerText = all[id].price;
+            loading.style.display = 'none';
+            img1.src = all[id].img;
+            img2.src = all[id].img2;
+            img3.src = all[id].img3;
+
+            console.log(all[id]);
+            let color = all[id].color;
+            let allsize = all[id].size;
+            let sizearray = allsize.split(',');
+            let colorarray = color.split(',');
+            for (let e = 0; e < sizearray.length; e++) {
+                sizes.innerHTML += `<button>${sizearray[e]}</button>`;
+            }
+            for (let e = 0; e < colorarray.length; e++) {
+                colors.innerHTML += `<div class="box" style="background:${colorarray[e]}"></div>`;
+            }
+
+            img1.addEventListener('click',()=>{
+                show(all[id].img)
+            })
+            img2.addEventListener('click',()=>{
+                show(all[id].img2)
+            })
+            img3.addEventListener('click',()=>{
+                show(all[id].img3)
+            })
+        })
+
+        function show(e) {
+            saiimg.src = e;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pf</title>
+    <link rel="stylesheet" href="../css/pf.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="profile">
+        <div class="pic">
+            <a href="../index.html"><i class="fa-solid fa-xmark"></i></a>
+            <div class="x">
+                <img src="../image/costume2.jpg" alt="">
+            </div>
+            <h2>Username</h2>
+        </div>
+        <div class="contact">
+            <div class="phone">
+                <i class="fa-solid fa-mobile"></i>
+                <p>09987653210</p>
+            </div>
+            <div class="email">
+                <i class="fa-solid fa-envelope"></i>
+                <p>...@gmail.com</p>
+            </div>
+        </div>
+        <button class="logout">Log Out</button>
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+        let username = document.querySelector('.pic h2');
+        let email = document.querySelector('.email p');
+        let logout = document.querySelector('.logout');
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBFDv1bhE6B_MZlHdd_3tFdGvibxioDzOg",
+            authDomain: "shanclothes-1618f.firebaseapp.com",
+            projectId: "shanclothes-1618f",
+            storageBucket: "shanclothes-1618f.firebasestorage.app",
+            messagingSenderId: "730846359047",
+            appId: "1:730846359047:web:a68939a83a7f07dd0b84a2",
+            measurementId: "G-S0CP5CMJCS"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log(user);
+                email.innerText = user.email;
+                if (user.displayName) {
+                    username.innerText = user.displayName;
+                }
+            } else {
+                window.location.href = '../../../html/login.html';
+            }
+        });
+
+        logout.addEventListener('click', () => {
+            let a = confirm('Are you sure to logout?');
+            if (a == true) {
+                signOut(auth).then(() => {
+                    alert('Logout successfully.')
+                }).catch((error) => {
+                    alert(error.code);
+                })
+            }
+        })
+    </script>
+
+</body>
+
+</html>

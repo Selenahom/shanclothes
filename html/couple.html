@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Couple</title>
+    <link rel="stylesheet" href="../css/couple.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="bar">
+        <div class="logobar">
+            <div class="logo">
+                <img src="../image/costume2.jpg" alt="">
+            </div>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+        <div class="icons">
+            <a href="https://forms.gle/5korTm4v9hoDTpuTA"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="./pf.html"><i class="fa-solid fa-user"></i></a>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+
+    <div class="top">
+        <a class="ho" href="../index.html">Home</a>
+        <a href="trendings.html">Trendings</a>
+        <a class="female" href="female.html">Female</a>
+        <a href="male.html">Male</a>
+        <a href="kids.html">Kids</a>
+        <a href="tops.html">Tops</a>
+        <a href="dresses.html">Dresses</a>
+        <a class="couple" href="couple.html">Couples</a>
+        <a href="wedding.html">Weddings</a>
+        <a href="bags.html">Bags</a>
+        <a class="ha" href="accessories.html">Accessories</a>
+    </div>
+    <div class="images">
+        <div class="one">
+        </div>
+        <div class="two">
+        </div>
+        <div class="three">
+        </div>
+        <div class="four">
+        </div>
+        <div class="five">
+        </div>  
+    </div>
+    <div class="loading">
+        <p>Loading...</p>
+    </div>
+    <script>
+        let one = document.querySelector('.one');
+        let two = document.querySelector('.two');
+        let three = document.querySelector('.three');
+        let four = document.querySelector('.four');
+        let five = document.querySelector('.five');
+        let loading = document.querySelector('.loading');
+        fetch('https://raw.githubusercontent.com/Selenahom/api/refs/heads/main/couple').then(r => r.json()).then(all => {
+            loading.style.display = 'none';
+            for (let i = 0; i < 3; i++) {
+                one.innerHTML += `<a href="../html/order.html?id=${i}&cate=couple">
+                <img src="${all[i].img}" alt="">
+            </a>`;
+            }
+            for (let i = 3; i < 6; i++) {
+                two.innerHTML += `<a href="../html/order.html?id=${i}&cate=couple">
+                <img src="${all[i].img}" alt="">
+            </a>`;
+            }
+            for (let i = 6; i < 9; i++) {
+                three.innerHTML += `<a href="../html/order.html?id=${i}&cate=couple">
+                <img src="${all[i].img}" alt="">
+            </a>`;
+            }
+            for (let i = 9; i < 12; i++) {
+                four.innerHTML += `<a href="../html/order.html?id=${i}&cate=couple">
+                <img src="${all[i].img}" alt="">
+            </a>`;
+            }
+            for (let i = 12; i < all.length; i++) {
+                five.innerHTML += `<a href="../html/order.html?id=${i}&cate=couple">
+                <img src="${all[i].img}" alt="">
+            </a>`;
+            }
+        })
+    </script>
+
+</body>
+</html>

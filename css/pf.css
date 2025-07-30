@@ -1,0 +1,100 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgba(136, 118, 74, 0.525);
+    backdrop-filter: blur(5px);
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 85px;
+    width: 430px;
+    padding: 20px;
+    background: rgb(222, 218, 203);
+    border-radius: 10px;
+}
+.profile .pic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profile .pic .x{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    margin: 0;
+}
+.profile .pic a{
+    margin-top: 0px;
+    margin-left: 400px;
+    margin-bottom: 10px;
+    color: rgb(150, 114, 23);
+}
+.profile .pic img{
+    height: 100px;
+    border-radius: 50px;
+    margin-left: 40%;
+}
+.profile .pic h2{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: rgb(150, 114, 23);
+}
+.contact{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 190px;
+    margin: 0;
+}
+.contact i{
+    color: rgb(150, 114, 23);
+    margin-right: 10px;
+}
+.phone i{
+    margin-right: 10px;
+    margin-left: 2px;
+}
+.phone{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    color: rgb(150, 114, 23);
+}
+.email{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    color: rgb(150, 114, 23);
+}
+.phone p{
+    margin: 0;
+}
+.email p{
+    margin: 0; 
+}
+button{
+    width: 300px;
+    height: 40px;
+    margin-top: 20px;
+    background: rgb(150, 114, 23);
+    border: none;
+    color: rgb(222, 218, 203);
+    border-radius: 10px;
+    font-size: 15px;
+    transition: 0.5s;
+}
+button:hover{
+    width: 330px;
+    height: 45px;
+    font-size: 17px;
+}

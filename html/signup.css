@@ -1,0 +1,126 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background:  #d9d3c1;
+}
+.book{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+}
+.book h1{
+    font-size: 50px;
+    color: rgb(150, 114, 23);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 5px;
+}
+.pen{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+.table{
+    display: flex;
+    flex-direction: column;
+}
+.table2{
+    display: flex;
+    flex-direction: column;
+}
+.table2 i{
+    color: #664241;
+}
+.pen input{
+    height: 35px;
+    border-radius: 20px;
+    background: none;
+    color: #664241;
+    outline: none;
+    border: solid 2px #664241;
+    padding-left: 13px;
+}
+.pen input::placeholder{
+    color:#664241;
+}
+.pen p{
+    color: #664241;
+    margin-bottom: 2px;
+}
+.table2 input{
+    margin-bottom: 10px;
+}
+.table3{
+    display: flex;
+    align-items: center;
+    color: #664241;
+    margin-bottom: 5px;
+}
+.table3 input{
+    margin: 0px;
+    margin-right: 10px;
+}
+.table3 p{
+    margin: 0px;
+}
+.table3 input{
+    color: #664241;
+}
+input[type=checkbox]{
+    accent-color: #664241;
+    width: 15px;
+    height: 15px;
+}
+button{
+    height: 37px;
+    border-radius: 20px;
+    background: none;
+    border: solid 2px #664241;
+    border: solid 2px #664241;
+    color: rgb(150, 114, 23);
+    font-size: 14px;
+}
+button:hover{
+    color: #d9d3c1;
+    background: rgb(150, 114, 23);
+    border: none;
+}
+.table4{
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.table4 i{
+    margin: 0px 16px;
+    font-size: 24px;
+    color: #664241;
+}
+.table4 i:hover{
+    color: rgb(150, 114, 23);
+}
+.signupwith{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.signupwith .ruler{
+    color: #664241;
+    margin-top: 10px;
+}
+.table5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.table5 .logi{
+    font-size: 15px;
+    color: rgb(150, 114, 23);
+    text-decoration: none;
+}
+.table5 a:hover{
+    color: rgb(150, 114, 23);
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="qq">
+        <h1>Log In</h1>
+        <div class="ww">
+            <i class="fa-solid fa-envelope"></i>
+            <input class="email" type="email" placeholder="Email">
+        </div>
+        <div class="ww">
+            <i class="fa-solid fa-key"></i>
+            <input class="pass" type="password" placeholder="Password">
+        </div>
+        <a href="forgot.html">Forgot Password?</a>
+        <button class="login">Login</button>
+        <div class="lower">
+            <p class="tt">Don't have an account?</p>
+            <a href="../html/sign up.html">Sign Up</a>
+        </div>
+    </div>
+    <div class="loading">
+        <p>Loging in...</p>
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+        import { getAuth, signInWithEmailAndPassword , onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+        let email = document.querySelector('.email');
+        let pass = document.querySelector('.pass');
+        let login = document.querySelector('.login');
+        let loading = document.querySelector('.loading');
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBFDv1bhE6B_MZlHdd_3tFdGvibxioDzOg",
+            authDomain: "shanclothes-1618f.firebaseapp.com",
+            projectId: "shanclothes-1618f",
+            storageBucket: "shanclothes-1618f.firebasestorage.app",
+            messagingSenderId: "730846359047",
+            appId: "1:730846359047:web:a68939a83a7f07dd0b84a2",
+            measurementId: "G-S0CP5CMJCS"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                window.location.href = '../../../';
+            } else {
+
+            }
+        });
+
+        login.addEventListener('click', () => {
+            if (email.value.length > 10) {
+                if (pass.value.length > 7) {
+                    loading.style.display = 'flex';
+                    signInWithEmailAndPassword(auth, email.value, pass.value).then((user) => {
+                        alert('Logined account successfully.');
+                        loading.style.display = 'none';
+                    })
+                        .catch((error) => {
+                            alert(error.code);
+                            loading.style.display = 'none';
+                        })
+                } else {
+                    alert('Password must have at least 8 or above!')
+                }
+            } else {
+                alert('Please enter email!')
+            }
+        })
+    </script>
+</body>
+
+</html>

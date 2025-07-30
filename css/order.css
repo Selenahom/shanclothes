@@ -1,0 +1,243 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #d9d3c1;
+}
+.back{
+    position: fixed;
+    left: 19px;
+    top: 25px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    background: none;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: rgb(150, 114, 23);
+}
+.back i{
+    margin-right: 5px;
+}
+.cover{
+    display: flex;
+    align-items: center;
+}
+.cover .left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+}
+.cover .left .big img{
+    height: 350px;
+    border-radius: 10px;
+    max-width: 390px;
+    object-fit: cover;
+    object-position: center;
+}
+.cover .left .bar{
+    display: flex;
+    max-width: 400px;
+    align-items: center;
+    overflow-x: scroll;
+}
+.cover .left .bar::-webkit-scrollbar{
+    background: none;
+    height: 7px;
+}
+.cover .left .bar::-webkit-scrollbar-thumb{
+    background: rgb(150, 114, 23);
+    border-radius: 9px;
+}
+.cover .left .bar img{
+    height: 115px;
+    margin-right: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.cover .left .bar .small3 img{
+    margin-right: 0px;
+}
+.cover .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 420px;
+    height: 500px;
+}
+.cover .right h1{
+    margin: 10px;
+    color: rgb(150, 114, 23);
+    font-family: 'Times New Roman', Times, serif;
+}
+.cover .right h2{
+    margin: 10px;
+    color: rgb(150, 114, 23);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#horizontal-line{
+    width: 400px;
+    height: 1.5px;
+    background:rgba(150, 114, 23, 0.269);
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.option{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 350px;
+}
+.option .size{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+}
+.option .size p{
+    margin-left: 12px;
+    margin-bottom: 0px;
+    color:rgba(150, 114, 23, 0.863);
+}
+.option .size .button{
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    margin-top: 10px;
+}
+.option .size .button button{
+    margin: 2px 5px;
+    height: 40px;
+    width: 38px;
+    background: none;
+    border: solid 1px rgb(150, 114, 23);
+    border-radius: 7px;
+    font-size: 15px;
+    transition: 0.3s;
+    color:rgba(150, 114, 23, 0.863);
+}
+.option .size .button button:hover{
+    background: rgb(150, 114, 23);
+    color: white;
+}
+.option .color{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    height: 100px;
+}
+.option .color .rainbow{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    justify-content: space-around;
+}
+.option .color p{
+    color:rgba(150, 114, 23, 0.863);
+}
+.option .color .red{
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+.option .color .red:hover{
+    width: 23px;
+    height: 23px;
+}
+.option .color .blue{
+    width: 20px;
+    height: 20px;
+    background: blue;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+.option .color .blue:hover{
+    width: 23px;
+    height: 23px;
+}
+.option .color .green{
+    width: 20px;
+    height: 20px;
+    background: green;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+.option .color .green:hover{
+    width: 23px;
+    height: 23px;
+}
+.option .color .box{
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+}
+.low{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 98%;
+    margin: 19px auto;
+}
+.share{
+    display: flex;
+    padding: 4px;
+    background: none;
+    color: rgb(150, 114, 23);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 23px;
+}
+.buy{
+    display: flex;
+    align-items: center;
+}
+.buy i{
+    color: rgb(150, 114, 23);
+    margin-right: 10px;
+    font-size: 20px;
+}
+.buy a{
+    text-decoration: none;
+    height: 40px;
+    width: 100px;
+    background: none;
+    border: solid 1px rgb(150, 114, 23);
+    border-radius: 7px;
+    font-size: 15px;
+    transition: 0.3s;
+    color:rgba(150, 114, 23, 0.863);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buy a:hover{
+    background: rgb(150, 114, 23);
+    color: white;
+}
+.loading{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    backdrop-filter: blur(5px);
+}
+.loading p{
+    background: #fff;
+    padding: 24px;
+    border-radius: 15px;
+    font-size: 17px;
+    color: #333; 
+}

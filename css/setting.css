@@ -1,0 +1,140 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgba(133, 119, 109, 0.493);
+}
+.all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: rgb(116, 89, 53);
+    height: 500px;
+    width: 400px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.all h3{
+    margin-left: 15px;
+}
+.all .account{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 350px;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+.all .account a{
+    transition: 0.3s;
+}
+.all .account:hover{
+    background: #eee;
+}
+.all .account a:hover{
+    color: brown;
+}
+.all .account a{
+    text-decoration: none;
+    margin-left: 15px;
+    color: white;
+}
+.all .email{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 350px;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+.all .email:hover{
+    background: #eee;
+    color: brown;
+}
+.all .email p{
+    margin-left: 15px;
+}
+.all .fb{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 350px;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+.all .fb a{
+    transition: 0.3s;
+}
+.all .fb:hover{
+    background: #eee;
+}
+.all .fb a:hover{
+    color: brown
+}
+.all .fb a{
+    text-decoration: none;
+    margin-left: 15px;
+    color: white;
+}
+.all .yt{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 350px;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+.all .yt:hover{
+    background: #eee;
+}
+.all .yt a{
+    transition: 0.3s;
+}
+.all .yt a:hover{
+    color: brown;
+}
+.all .yt a{
+    text-decoration: none;
+    margin-left: 15px;
+    color: white;
+}
+.all .button{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 350px;
+    border-radius: 10px;
+    transition: 0.3s;
+    background: #eee;
+    margin-bottom: 20px;
+}
+.all .button:hover{
+    background: none;
+    border: #eee solid 1px;
+}
+.all .button button{
+    height: 30px;
+    width: 350px;
+    border: none;
+    color: brown;
+    font-size: 20px;
+    background: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.all .button button:hover{
+    color: #eee;
+}
+.all .back{
+    border: none;
+    background: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #eee;
+}
